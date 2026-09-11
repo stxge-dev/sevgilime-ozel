@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bir Sürprizim Var! 🥰</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 71, 126, 0.15);
+            text-align: center;
+            max-width: 360px;
+            width: 85%;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transform: scale(0.9);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            to { transform: scale(1); }
+        }
+
+        .avatar {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            20% { transform: scale(1.1); }
+            40% { transform: scale(1.05); }
+            60% { transform: scale(1.15); }
+            80% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #ff477e;
+            font-size: 26px;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #4f5d75;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff477e, #ff7096);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 71, 126, 0.4);
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            pointer-events: none;
+            animation: floatUp 4s linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) translateX(0) scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) translateX(50px) scale(1.2) rotate(180deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(-20px) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar">💝</div>
+        <h1>İyi Ki Hayatımdasın!</h1>
+        
+        <!-- MANİTANA MESAJINI BURAYA YAZABİLİRSİN -->
+        <p>Seninle geçen her an, dünyadaki en güzel animasyondan bile daha tatlı. Yüzündeki gülümseme hiç eksik olmasın sevgilim. Seni çok seviyorum! 💕</p>
+        
+        <button class="btn" onclick="burstHearts()">Sana Sevgim Tıkla! ✨</button>
+    </div>
+
+    <script>
+        const heartEmojis = ['❤️', '💖', '💝', '💕', '💗', '🌸'];
+
+        function createHeart(isBurst = false) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            if (isBurst) {
+                heart.style.left = (Math.random() * 40 + 30) + 'vw';
+            }
+            
+            heart.style.animationDuration = (Math.random() * 2 + 2.5) + 's'; 
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4500);
+        }
+
+        setInterval(() => createHeart(false), 400);
+
+        function burstHearts() {
+            for(let i = 0; i < 25; i++) {
+                setTimeout(() => createHeart(true), i * 60);
+            }
+        }
+    </script>
+</body>
+</html>
