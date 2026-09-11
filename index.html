@@ -27,7 +27,7 @@
         .game-container {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(10px);
-            padding: 20px;
+            padding: 25px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(255, 71, 126, 0.15);
             text-align: center;
@@ -60,16 +60,6 @@
             display: inline-block;
         }
         .btn:hover { transform: scale(1.05); }
-
-        /* Polaroid Çerçeve Boyutu Küçültüldü */
-        .photo-album { display: flex; justify-content: center; margin: 10px 0; }
-        .photo-frame {
-            width: 170px; background: white; padding: 8px 8px 18px 8px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12); border-radius: 4px;
-            transform: rotate(-2deg); transition: transform 0.3s;
-        }
-        .photo-frame:hover { transform: scale(1.05) rotate(1deg); }
-        .photo-frame img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 2px; }
 
         /* Sayaç Kutusu */
         .counter-box {
@@ -139,17 +129,10 @@
         
         <!-- EKRAN 1: ANILAR & GİRİŞ -->
         <div class="screen active" id="screen1">
-            <div style="font-size: 35px;">✉️💝</div>
+            <div style="font-size: 50px; margin-bottom: 10px;">✉️💝✨</div>
             <h1>Sana Özel Bir Dünyam Var!</h1>
-            <p>Senin için kurcalayabileceğin, tamamen ikimizin anılarıyla dolu küçük bir oyun alanı hazırladım sevgilim. 🌸</p>
-            
-            <div class="photo-album">
-                <div class="photo-frame">
-                    <!-- Kanka senin attığın linkin gerçek ham halini buraya yerleştirdim, hatasız açılacak -->
-                    <img src="https://hizliresim.com" alt="Bizim En Özel Anımız">
-                </div>
-            </div>
-            
+            <p>Senin için kurcalayabileceğin, tamamen ikimizin anılarıyla ve bize özel detaylarla dolu küçük bir oyun alanı hazırladım sevgilim. 🌸</p>
+            <p style="font-size: 24px; margin: 15px 0;">💖🔒🔐💖</p>
             <button class="btn" onclick="nextScreen(2)">Hadi Başlayalım! 🚀</button>
         </div>
 
@@ -217,3 +200,13 @@
         <!-- EKRAN 7: HAYIRIN KAÇTIĞI BÜYÜK FİNAL -->
         <div class="screen" id="screen7">
             <div style="font-size: 35px;">🧸🍭</div>
+            <h1>Ve Büyük Final...</h1>
+            <p style="font-size: 14px; font-weight: 500;">Bütün aşamaları başarıyla geçtin uyuz. Şimdi sana hayati bir sorum var: Aramızda ne yaşanırsa yaşansın, ilişkimizde ne kadar ilerlersek ilerleyelim veyahut bir gün yüz yüze göz göze baktığımızda veya o ana dek benim yine de elimi sımsıkı tutacağına, yanımda olacağına, sıkı̿ sıkı sarılacağına ve benim tatlı gıcığım olmaya EVET der misin? ☕✨</p>
+            
+            <div class="choice-container">
+                <button class="btn" id="yesBtn" onclick="finalCelebrate()">KOCAMAN EVET! 😍</button>
+                <button class="btn" id="noBtn" onmouseover="escapeButton()">Hayır gıcık, demem 😜</button>
+            </div>
+        </div>
+
+        <div class="screen" id="screen8">
