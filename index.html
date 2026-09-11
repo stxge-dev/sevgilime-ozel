@@ -142,15 +142,15 @@
             
             <div class="photo-album">
                 <div class="photo-frame">
-                    <!-- Gerçek, doğrudan fotoğraf linkiniz buraya şak diye oturdu kanka -->
-                    <img src="https://ibb.co" alt="Bizim En Özel Anımız">
+                    <!-- Kırılmayan en temiz doğrudan fotoğraf linki -->
+                    <img src="https://imgbox.com" alt="Bizim En Özel Anımız" onerror="this.src='https://ibb.co'">
                 </div>
             </div>
             
             <button class="btn" onclick="nextScreen(2)">Hadi Başlayalım! 🚀</button>
         </div>
 
-        <!-- EKRAN 2: AŞK SAYACI (22 MAYIS 2026, 00:09) -->
+        <!-- EKRAN 2: AŞK SAYACI (Bugünün tarihi: 11 Eylül 2026, çıkış tarihi: 22 Mayıs 2026) -->
         <div class="screen" id="screen2">
             <div style="font-size: 40px;">⏳❤️</div>
             <h1>Zaman Su Gibi Akıyor...</h1>
@@ -191,7 +191,7 @@
         <div class="screen" id="screen5">
             <div style="font-size: 40px;">😤🤫</div>
             <h1>Soru 2 / 3</h1>
-            <p>Benim şu hayatta en tahammedil edemediğim, gördüğüm an modumu düşüren şey nedir?</p>
+            <p>Benim şu hayatta en tahammül edemediğim, gördüğüm an modumu düşüren şey nedir?</p>
             <div class="quiz-options">
                 <button class="option-btn" onclick="correctAnswer(5)">Yalan söylenmesi 🛑</button>
                 <button class="option-btn" onclick="wrongAnswer(this, 'Yok artık, o kadar da değil! 😂')">Telefonumun şarjının %1 kalması 🔋</button>
@@ -214,4 +214,3 @@
         <!-- EKRAN 7: HAYIRIN KAÇTIĞI BÜYÜK FİNAL -->
         <div class="screen" id="screen7">
             <div style="font-size: 40px;">🧸🍭</div>
-            <h1>Ve Büyük Final...</h1>
